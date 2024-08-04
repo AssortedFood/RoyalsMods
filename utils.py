@@ -1,8 +1,13 @@
 import pygetwindow as gw
 import pyautogui
-import win32gui
-import win32con
-import win32api
+from win32 import win32gui, win32api
+import win32con # type: ignore
+
+def get_windows(window_title):
+    windows = gw.getWindowsWithTitle(window_title)
+    if not windows:
+        print("MapleRoyals window not found.")
+    return windows
 
 def bring_window_to_foreground(window):
     try:
@@ -15,16 +20,8 @@ def bring_window_to_foreground(window):
     except Exception as e:
         print(f"Could not activate window: {e}")
 
-def resize_and_position_mapleroyals():
-    # Get screen dimensions
+def client_tiling(windows):
     screen_width, screen_height = pyautogui.size()
-
-    # Resize all windows to the calculated width and height
-    windows = gw.getWindowsWithTitle('MapleRoyals')
-    if not windows:
-        print("MapleRoyals window not found.")
-        return
-
     window_width = 710
     window_height = 540
 
@@ -47,5 +44,3 @@ def resize_and_position_mapleroyals():
             current_window.moveTo(x, y)
 
     print("Resized and repositioned MapleRoyals windows.")
-
-resize_and_position_mapleroyals()

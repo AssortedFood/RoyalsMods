@@ -32,7 +32,7 @@ def resize_and_position_mapleroyals(width, height, position):
     print(f"Resized and moved MapleRoyals window to {width}x{height}, top-center of the screen.")
 
 # Example usage
-size = 460
+size = 340
 w = size * 4
 h = size * 3
-resize_and_position_mapleroyals(w, h, "M")
+resize_and_position_mapleroyals(w, h, "R")

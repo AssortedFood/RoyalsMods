@@ -5,14 +5,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance Force
 SetTitleMatchMode, 3
 
-delaySmall := 12
-delayLarge := 36
+delaySmall := 24
+delayLarge := 48
 
 SetTimer, Check, 250
 return
 
 Check:
-if WinActive("MapleRoyals May 31 2024 IMG") {
+if WinActive("MapleRoyals May 31 2024 WZ") {
     Suspend, Off
 }
 else {

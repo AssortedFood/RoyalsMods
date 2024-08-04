@@ -1,22 +1,23 @@
 import pygetwindow as gw
 import pyautogui
-import math
+import win32gui
+import win32con
+import win32api
 
-def resize_and_position_mapleroyals(num_windows):
+def bring_window_to_foreground(window):
+    try:
+        hwnd = window._hWnd  # Get the window handle
+        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)  # Restore the window if minimized
+        win32gui.SetForegroundWindow(hwnd)  # Bring the window to the foreground
+        # Send Alt key press to ensure it is in the foreground
+        win32api.keybd_event(win32con.VK_MENU, 0, win32con.KEYEVENTF_EXTENDEDKEY, 0)
+        win32api.keybd_event(win32con.VK_MENU, 0, win32con.KEYEVENTF_EXTENDEDKEY | win32con.KEYEVENTF_KEYUP, 0)
+    except Exception as e:
+        print(f"Could not activate window: {e}")
+
+def resize_and_position_mapleroyals():
     # Get screen dimensions
     screen_width, screen_height = pyautogui.size()
-
-    # Calculate the maximum possible width and height for each window
-    aspect_ratio = 4 / 3
-    screen_aspect_ratio = 16 / 9
-
-    # Determine the optimal number of rows and columns to fit windows on the screen
-    for cols in range(1, num_windows + 1):
-        rows = math.ceil(num_windows / cols)
-        window_width = screen_width / cols
-        window_height = window_width / aspect_ratio
-        if rows * window_height <= screen_height:
-            break
 
     # Resize all windows to the calculated width and height
     windows = gw.getWindowsWithTitle('MapleRoyals')
@@ -24,21 +25,27 @@ def resize_and_position_mapleroyals(num_windows):
         print("MapleRoyals window not found.")
         return
 
-    windows = windows[:num_windows]  # Limit to the number of specified windows
-    window_width = int(window_width)
-    window_height = int(window_height)
+    window_width = 710
+    window_height = 540
 
-    for i, window in enumerate(windows):
-        col = i % cols
-        row = i // cols
-        x = col * window_width
-        y = row * window_height
-        window.activate()
-        window.resizeTo(window_width, window_height)
-        window.moveTo(x, y)
+    for i in range(min(4, len(windows))):  # Ensure we do not exceed the number of available windows
+        current_window = windows[i]
+        if i < 2:
+            x = screen_width - (window_width * (i + 1))
+            y = 0
+        else:
+            x = screen_width - (window_width * ((i - 2) + 1))
+            y = window_height
 
-    print(f"Resized and repositioned {num_windows} MapleRoyals windows to {window_width}x{window_height}.")
+        # Attempt to activate the window
+        bring_window_to_foreground(current_window)
 
-# Example usage
-num_windows = 4
-resize_and_position_mapleroyals(num_windows)
+        # Resize and move only if necessary
+        if current_window.width != window_width or current_window.height != window_height:
+            current_window.resizeTo(window_width, window_height)
+        if current_window.left != x or current_window.top != y:
+            current_window.moveTo(x, y)
+
+    print("Resized and repositioned MapleRoyals windows.")
+
+resize_and_position_mapleroyals()

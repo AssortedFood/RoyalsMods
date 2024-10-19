@@ -12,7 +12,7 @@ SetTimer, Check, 250
 return
 
 Check:
-if WinActive("MapleRoyals May 31 2024 WZ") {
+if WinActive("MapleStory") {
     Suspend, Off
 }
 else {

@@ -86,15 +86,16 @@ Start-ProcessAsAdmin(filePath) {
     Run, powershell.exe -Command "Start-Process -FilePath `"$filePath`" -Verb RunAs"
 }
 
-; Start the infinite loop
-MainLoop()
-
-F1::Pause  ; Hotkey to pause/unpause the script
 F2::
     ; Run git pull via PowerShell
     Run, powershell.exe -NoProfile -Command "cd C:\Users\oxi\Projects\RoyalsMods; git pull"
     Sleep 1000  ; Wait for git pull to complete (adjust time as needed)
 
     ; Reload the farm.ahk script with admin privileges
-    Start-ProcessAsAdmin("C:\Users\oxi\Projects\RoyalsMods\farm.ahk")
+    RunAsAdmin("C:\Users\oxi\Projects\RoyalsMods\farm.ahk")
 Return
+
+; Function to run a script with admin privileges
+RunAsAdmin(filePath) {
+    Run, % "powershell.exe -Command Start-Process -FilePath `"" filePath "`" -Verb RunAs"
+}

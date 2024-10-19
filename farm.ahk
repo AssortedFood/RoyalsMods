@@ -81,6 +81,8 @@ MainLoop() {
     }
 }
 
+F1::Pause
+
 F2::
     ; Run the PowerShell script that pulls from git and reloads the AHK script without showing a GUI
     Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\RunFarm.ps1"

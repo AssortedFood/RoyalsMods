@@ -81,21 +81,7 @@ MainLoop() {
     }
 }
 
-; Function to run the AHK script with admin privileges
-Start-ProcessAsAdmin(filePath) {
-    Run, powershell.exe -Command "Start-Process -FilePath `"$filePath`" -Verb RunAs"
-}
-
 F2::
-    ; Run git pull via PowerShell
-    Run, powershell.exe -NoProfile -Command "cd C:\Users\oxi\Projects\RoyalsMods; git pull"
-    Sleep 1000  ; Wait for git pull to complete (adjust time as needed)
-
-    ; Reload the farm.ahk script with admin privileges
-    RunAsAdmin("C:\Users\oxi\Projects\RoyalsMods\farm.ahk")
+    ; Run the PowerShell script that pulls from git and reloads the AHK script without showing a GUI
+    Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\RunFarm.ps1"
 Return
-
-; Function to run a script with admin privileges
-RunAsAdmin(filePath) {
-    Run, % "powershell.exe -Command Start-Process -FilePath `"" filePath "`" -Verb RunAs"
-}

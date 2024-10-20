@@ -34,7 +34,7 @@ SearchPixelColour(targetColour, variation) {
 }
 
 ; Example usage of the function
-F4::
+F5::
 {
     targetColour := "0xBABABA"  ; Define the target colour
     variation := 30  ; Set the colour variation

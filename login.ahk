@@ -10,5 +10,5 @@ IsMapleStoryActive() {
 }
 
 if IsMapleStoryActive() {
-    ;
+    ; 
 }

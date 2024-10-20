@@ -1,6 +1,6 @@
 ### TODO
 
-- press z more/better
+- ~~press z more/better~~
 
 - add frenzy mode
 - hp and mana pixel get

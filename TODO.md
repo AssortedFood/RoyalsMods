@@ -3,8 +3,8 @@
 - controller script that has alt-tab and refresh F keys
 - hp and mana pixel get
 - new strategy:
-  - take picture of hp and mana
-  - check both in same image
+  - take picture of hp and mana (150x10)
+  - check both in same image (decile scan, hp first then mana, also search low to high)
   - return values
 - auto town portal if below % hp
 - auto stats

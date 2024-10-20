@@ -3,6 +3,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 #SingleInstance Force
 SetTitleMatchMode, 2  ; Partial match for window titles
+CoordMode, Pixel, Screen
 
 GetHPPercent() {
     ; Hardcoded box area (coordinates of the top-left corner, width, and height)

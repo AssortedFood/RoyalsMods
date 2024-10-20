@@ -32,6 +32,4 @@ if IsMapleStoryActive() {
     Send %password%
 }
 
-
-
 return

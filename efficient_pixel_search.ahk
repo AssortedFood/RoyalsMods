@@ -3,7 +3,6 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 #SingleInstance Force
 CoordMode, Pixel, Screen  ; Use screen coordinates for PixelSearch
-CoordMode, Mouse, Screen  ; Use screen coordinates for PixelSearch
 
 ; Function to search the screen for a specific colour with a variation
 SearchPixelColour(targetColour, variation) {
@@ -11,12 +10,21 @@ SearchPixelColour(targetColour, variation) {
     screenWidth := A_ScreenWidth
     screenHeight := A_ScreenHeight
 
+    ; Define the log file path
+    logFilePath := A_ScriptDir . "\PixelSearchLog.txt"
+
+    ; Delete any existing log file
+    FileDelete, %logFilePath%
+
     ; Initialize an array to store the matching coordinates
     matchCoords := []
 
     ; Initialize the starting point for the search
     x := 0
     y := 0
+
+    ; Start logging progress
+    FileAppend, Starting pixel search for colour: %targetColour% with variation: %variation%`n, %logFilePath%
 
     ; Continue searching while matches are found
     Loop {
@@ -27,6 +35,9 @@ SearchPixelColour(targetColour, variation) {
             ; Store the found coordinates in the array
             matchCoords.Push({x: foundX, y: foundY})
 
+            ; Log the found coordinates to the file
+            FileAppend, Match found at X: %foundX% Y: %foundY%`n, %logFilePath%
+
             ; Move the search start point to avoid matching the same pixel again
             x := foundX + 1
             y := foundY
@@ -35,7 +46,9 @@ SearchPixelColour(targetColour, variation) {
         }
     }
 
-    ; Return the array of matching coordinates
+    ; Final status after search completes
+    FileAppend, Search completed.`n, %logFilePath%
+
     return matchCoords
 }
 
@@ -47,14 +60,5 @@ variation := 30  ; Set the colour variation
 ; Get the matching coordinates
 matchCoords := SearchPixelColour(targetColour, variation)
 
-MsgBox % "Search complete. Moving the mouse to each match."
-
-; Move the mouse to each matching coordinate
-for index, coord in matchCoords {
-
-    MouseMove, coord.x, coord.y
-    Sleep, 100
-}
-
-MsgBox % "Mouse movement complete."
+MsgBox % "Search complete."
 return

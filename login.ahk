@@ -35,7 +35,7 @@ Loop, {
         Send %password%
         Sleep, 50
         Send {Enter}
-        Sleep, 50
+        Sleep, 500
         ExitApp
     }
 }

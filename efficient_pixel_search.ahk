@@ -10,14 +10,8 @@ SearchPixelColour(targetColour, variation) {
     screenWidth := A_ScreenWidth
     screenHeight := A_ScreenHeight
 
-    ; Define the log file path
-    logFilePath := A_ScriptDir . "\PixelSearchLog.txt"
-
-    ; Delete any existing log file
-    FileDelete, %logFilePath%
-
-    ; Start logging progress
-    FileAppend, Starting pixel search for colour: %targetColour% with variation: %variation%`n, %logFilePath%
+    ; Initialize an array to store the matching coordinates
+    matchCoords := []
 
     ; Initialize the starting point for the search
     x := 0
@@ -29,27 +23,36 @@ SearchPixelColour(targetColour, variation) {
         PixelSearch, foundX, foundY, x, y, screenWidth - 1, screenHeight - 1, targetColour, variation, Fast RGB
 
         if (ErrorLevel = 0) {
-            ; Log the found coordinates
-            FileAppend, Match found at X: %foundX% Y: %foundY%`n, %logFilePath%
-            
+            ; Store the found coordinates in the array
+            matchCoords.Push({x: foundX, y: foundY})
+
             ; Move the search start point to avoid matching the same pixel again
             x := foundX + 1
             y := foundY
         } else {
-            ; No more matches found
-            FileAppend, No more matches found.`n, %logFilePath%
-            break
+            break  ; No more matches found
         }
     }
 
-    ; Final status after search completes
-    FileAppend, Search completed.`n, %logFilePath%
+    ; Return the array of matching coordinates
+    return matchCoords
 }
 
 ; Execute the search immediately when the script is run
 MsgBox % "Starting search..."
 targetColour := "0xBABABA"  ; Define the target colour
 variation := 30  ; Set the colour variation
-SearchPixelColour(targetColour, variation)
-MsgBox % "Search complete."
+
+; Get the matching coordinates
+matchCoords := SearchPixelColour(targetColour, variation)
+
+MsgBox % "Search complete. Moving the mouse to each match."
+
+; Move the mouse to each matching coordinate
+for index, coord in matchCoords {
+    MouseMove, coord.x, coord.y
+    Sleep, 20  ; 20ms delay between movements
+}
+
+MsgBox % "Mouse movement complete."
 return

@@ -28,9 +28,8 @@ IsMapleStoryActive() {
 PerformAction(actionKey, count, delay := 50) {
     Loop, %count% {
         if IsMapleStoryActive() {
-            Send {%actionKey% down}
+            Send {%actionKey%}
             Sleep delay
-            Send {%actionKey% up}
         }
     }
 }

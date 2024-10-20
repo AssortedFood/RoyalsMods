@@ -5,9 +5,9 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
-UnitsPerDirection := 10      ; Number of walk+attack units before turning around
-WalkDuration := 200         ; Duration of walking in milliseconds
-AttackDelay := 20           ; Duration of attack key hold in milliseconds
+UnitsPerDirection := 20      ; Number of walk+attack units before turning around
+WalkDuration := 100         ; Duration of walking in milliseconds
+AttackDelay := 30           ; Duration of attack key hold in milliseconds
 ZPressCount := 5            ; Number of Z presses for item pickup
 ZPressInterval := 20        ; Interval between Z presses in milliseconds
 AttackKey := "Control"      ; Key to use for attacks (can change later)
@@ -16,7 +16,7 @@ LeftKey := "Left"           ; Key to walk left
 RightKey := "Right"         ; Key to walk right
 
 UnitCounter := 0
-Direction := "left"
+Direction := "right"
 
 ; Function: Check if MapleStory is active
 IsMapleStoryActive() {

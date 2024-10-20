@@ -42,6 +42,8 @@ SearchPixelColour(targetColour, variation) {
 }
 
 ; Execute the search immediately when the script is run
+MsgBox % "Starting search..."
 targetColour := "0xBABABA"  ; Define the target colour
 variation := 30  ; Set the colour variation
 SearchPixelColour(targetColour, variation)
+return

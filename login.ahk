@@ -9,10 +9,6 @@ IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
 
-; if IsMapleStoryActive() {
-;     Send, Oxidising
-; }
-
 ; Load environment variable from .env file
 FileRead, envContent, .env
 
@@ -27,6 +23,10 @@ Loop, Parse, envContent, `n, `r
     }
 }
 
-MsgBox, %password%
+; if IsMapleStoryActive() {
+;     Send, Oxidising
+; }
+
+
 
 return

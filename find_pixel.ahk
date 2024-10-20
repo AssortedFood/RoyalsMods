@@ -27,12 +27,14 @@ SearchPixelColour(targetColour, variation) {
         {
             x := A_Index - 1  ; Start from 0 in X axis
             
-            PixelGetColor, foundColour, x, y, RGB
             ; Check if the current pixel color matches the target colour with the given variation
             PixelSearch, foundX, foundY, x, y, x, y, targetColour, variation, RGB
             if (ErrorLevel = 0) {
                 ; Log the coordinates where the match is found
                 FileAppend, Match found at X: %x% Y: %y%`n, %logFilePath%
+            } else {
+                ; Log the coordinates where no match is found
+                FileAppend, No match at X: %x% Y: %y%`n, %logFilePath%
             }
         }
     }

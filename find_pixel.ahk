@@ -33,11 +33,8 @@ SearchPixelColour(targetColour, variation) {
         MsgBox, Found matches:`n%matches%
 }
 
-; Example usage of the function
-F4::
-{
-    targetColour := "0xBABABA"  ; Define the target colour
-    variation := 30  ; Set the colour variation
-    SearchPixelColour(targetColour, variation)
-}
+targetColour := "0xBABABA"  ; Define the target colour
+variation := 30  ; Set the colour variation
+SearchPixelColour(targetColour, variation)
+
 return

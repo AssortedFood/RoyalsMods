@@ -44,6 +44,7 @@ Loop, {
         Sleep, 500
         Send {Enter}
         Sleep, 500
+        ; handover to python script to take screenshot and process
         ExitApp
     }
 }

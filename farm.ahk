@@ -81,6 +81,7 @@ MainLoop() {
     }
 }
 
+MsgBox
 MainLoop()
 
 F1::Pause

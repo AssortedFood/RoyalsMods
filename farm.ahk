@@ -82,7 +82,7 @@ MainLoop() {
 }
 
 MsgBox
-MainLoop() ;test
+MainLoop()
 
 F1::Pause
 

@@ -13,8 +13,8 @@ $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite
 $action = {
     $filePath = $Event.SourceEventArgs.FullPath
 
-    # Ignore changes within the .git directory
-    if ($filePath.StartsWith("C:\Users\Hamoon\Projects\RoyalsMods\.git")) {
+    # Ignore changes to the .git directory itself
+    if ($filePath -eq "C:\Users\Hamoon\Projects\RoyalsMods\.git") {
         return
     }
 

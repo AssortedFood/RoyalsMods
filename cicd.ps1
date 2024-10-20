@@ -1,6 +1,6 @@
 # Define the directory to watch
 $directoryToWatch = "C:\Users\Hamoon\Projects\RoyalsMods"
-$debounceTime = 5  # Delay in seconds to prevent multiple triggers
+$debounceTime = 3  # Delay in seconds to prevent multiple triggers
 
 # Set up the FileSystemWatcher for the directory
 $watcher = New-Object System.IO.FileSystemWatcher
@@ -9,7 +9,7 @@ $watcher.Filter = "*.*"  # Watch all files in the directory
 $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite
 
 # Define the action to take when a change is detected
-$lastEventTime = Get-Date
+$lastEventTime = Get-Date 
 
 $action = {
     $currentEventTime = Get-Date

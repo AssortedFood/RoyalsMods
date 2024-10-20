@@ -50,8 +50,9 @@ MsgBox % "Search complete. Moving the mouse to each match."
 
 ; Move the mouse to each matching coordinate
 for index, coord in matchCoords {
+
     MouseMove, coord.x, coord.y
-    Sleep, 20  ; 20ms delay between movements
+    Sleep, 100
 }
 
 MsgBox % "Mouse movement complete."

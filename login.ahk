@@ -9,3 +9,6 @@ IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
 
+if IsMapleStoryActive() {
+    ;
+}

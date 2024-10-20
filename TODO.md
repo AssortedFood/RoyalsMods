@@ -2,6 +2,10 @@
 
 - controller script that has alt-tab and refresh F keys
 - hp and mana pixel get
+- new strategy:
+  - take picture of hp and mana
+  - check both in same image
+  - return values
 - auto town portal if below % hp
 - auto stats
 - auto buff (sprint, among others)

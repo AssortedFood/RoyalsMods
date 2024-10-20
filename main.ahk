@@ -3,6 +3,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 #SingleInstance Force
 SetTitleMatchMode, 2  ; Partial match for window titles
+DetectHiddenWindows, On
 
 F1::
 Send ^!{Tab}
@@ -13,8 +14,5 @@ Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File
 return
 
 F3::
-DetectHiddenWindows, On
-WM_COMMAND := 0x0111
-ID_FILE_PAUSE := 65403
-PostMessage, WM_COMMAND, ID_FILE_PAUSE,,, "C:\Users\oxi\Projects\RoyalsMods\farm.ahk" ahk_class AutoHotkey
+PostMessage, 0x0111, 65306,,, ScriptFileName.ahk - AutoHotkey  ; Pause.
 return

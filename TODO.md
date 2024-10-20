@@ -1,11 +1,16 @@
 ### TODO
 
-Start-Process powershell -Verb runAs -ArgumentList "python C:\Users\oxi\Projects\RoyalsMods\resize_gui.py"
-
-
 - hp and mana pixel get
 - auto stats
 - auto buff (sprint, among others)
-- startup script
+- startup script:
+    - launch maple (check it worked)
+    - launch vs code repo (fullscreen)
+    - run git reloading script
+    - fullscreen maple using Start-Process powershell -Verb runAs -ArgumentList "python C:\Users\oxi\Projects\RoyalsMods\resize_gui.py"
+    - login.ahk
+    - captcha.ahk
+    - farm & potions.ahk
+    - option to start suspended
 - login
 - send numpad "captcha" to chat gpt to solve

@@ -81,6 +81,8 @@ MainLoop() {
     }
 }
 
+MainLoop
+
 F1::Pause
 
 F2::

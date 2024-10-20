@@ -1,4 +1,4 @@
-#Persisten
+#Persistent
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 #SingleInstance Force

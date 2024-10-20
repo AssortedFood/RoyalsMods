@@ -73,3 +73,9 @@ GetMPPercent() {
 
     return 100  ; No colour found in any decile
 }
+
+F4::
+hpValue := GetHPPercent()
+mpValue := GetMPPercent()
+MsgBox % "HP: " . hpValue . "`nMP: " . mpValue
+return

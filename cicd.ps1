@@ -48,7 +48,7 @@ $action = {
         git push
 
         Write-Host "Git push completed."
-    }
+    } 
 }
 
 # Register the event

@@ -39,6 +39,8 @@ Loop, {
         Send {Enter}
         Sleep, 500
         Click, 513, 413
+        Sleep, 100
+        Send {Enter}
         Sleep, 500
         ExitApp
     }

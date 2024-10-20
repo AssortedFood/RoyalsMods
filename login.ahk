@@ -23,9 +23,14 @@ Loop, Parse, envContent, `n, `r
     }
 }
 
-; if IsMapleStoryActive() {
-;     Send, Oxidising
-; }
+if IsMapleStoryActive() {
+    Clipboard := "Oxidising"
+    Send ^v
+    Sleep, 50
+    Send {Tab}
+    Sleep, 50
+    Send %password%
+}
 
 
 

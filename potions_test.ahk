@@ -6,10 +6,10 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 
 GetHPPercent() {
     ; Hardcoded box area (coordinates of the top-left corner, width, and height)
-    x1 := 0  ; Top-left corner X
-    y1 := 0  ; Top-left corner Y
-    boxWidth := 100  ; Width of the entire box
-    boxHeight := 50  ; Height of the box
+    x1 := 336  ; Top-left corner X
+    y1 := 1055  ; Top-left corner Y
+    boxWidth := 150  ; Width of the entire box
+    boxHeight := 12  ; Height of the box
 
     ; Define the colours (in hexadecimal format)
     colours := ["0xB8B8B8", "0xC3C3C3", "0xCCCCCC", "0x9C9C9C", "0xBEBEBE"]
@@ -41,10 +41,10 @@ GetHPPercent() {
 
 GetMPPercent() {
     ; Hardcoded box area (coordinates of the top-left corner, width, and height)
-    x1 := 0  ; Top-left corner X
-    y1 := 0  ; Top-left corner Y
-    boxWidth := 100  ; Width of the entire box
-    boxHeight := 50  ; Height of the box
+    x1 := 498  ; Top-left corner X
+    y1 := 1055  ; Top-left corner Y
+    boxWidth := 150  ; Width of the entire box
+    boxHeight := 12  ; Height of the box
 
     ; Define the colours (in hexadecimal format)
     colours := ["0xB8B8B8", "0xC3C3C3", "0xCCCCCC", "0x9C9C9C", "0xBEBEBE"]

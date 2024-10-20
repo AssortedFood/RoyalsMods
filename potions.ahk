@@ -5,8 +5,8 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable Variables
-hpPotionHealAmount := 500  ; Amount of HP healed by potion
-mpPotionHealAmount := 300  ; Amount of MP healed by potion
+hpPotionHealAmount := 50  ; Amount of HP healed by potion
+mpPotionHealAmount := 100  ; Amount of MP healed by potion
 hpKey := "End"  ; Key for HP potion
 mpKey := "PgDn"  ; Key for MP potion
 hpThreshold := 50  ; % HP threshold to trigger potion
@@ -46,7 +46,7 @@ CheckHPMP() {
     }
 }
 
-SearchColoursInDeciles() {
+GetHPPercent() {
     ; Hardcoded box area (coordinates of the top-left corner, width, and height)
     x1 := 0  ; Top-left corner X
     y1 := 0  ; Top-left corner Y
@@ -81,28 +81,39 @@ SearchColoursInDeciles() {
     return 100  ; No colour found in any decile
 }
 
-; Function: Get HP percentage based on the bar's colour
-GetHPPercent() {
-    global hpBarX, hpBarY, hpBarColour
-
-    ; PixelGetColor example to detect HP bar colour
-    PixelGetColor, hpColor, %hpBarX%, %hpBarY%
-    if (hpColor = hpBarColour) {
-        return 50  ; Placeholder percentage, you'll need logic to calculate actual HP percentage
-    }
-    return 100  ; Default to full HP if no matching colour is found
-}
-
-; Function: Get MP percentage based on the bar's colour
 GetMPPercent() {
-    global mpBarX, mpBarY, mpBarColour
+    ; Hardcoded box area (coordinates of the top-left corner, width, and height)
+    x1 := 0  ; Top-left corner X
+    y1 := 0  ; Top-left corner Y
+    boxWidth := 100  ; Width of the entire box
+    boxHeight := 50  ; Height of the box
 
-    ; PixelGetColor example to detect MP bar colour
-    PixelGetColor, mpColor, %mpBarX%, %mpBarY%
-    if (mpColor = mpBarColour) {
-        return 50  ; Placeholder percentage, you'll need logic to calculate actual MP percentage
+    ; Define the colours (in hexadecimal format)
+    colours := ["0xB8B8B8", "0xC3C3C3", "0xCCCCCC", "0x9C9C9C", "0xBEBEBE"]
+
+    ; Calculate the width of each decile
+    decileWidth := boxWidth / 10
+
+    ; Loop from decile 100 down to decile 10 (i.e., 10 to 1)
+    Loop, 10
+    {
+        decileId := 11 - A_Index  ; Calculate decile ID (100 to 10)
+        decileX := x1 + (decileId - 1) * decileWidth  ; Calculate X coordinate for this decile
+
+        ; Define the coordinates of the current decile (box)
+        decileX2 := decileX + decileWidth - 1  ; Right side of the decile
+
+        ; Loop through each colour and use PixelSearch for each decile
+        Loop, % colours.MaxIndex() {
+            currentColour := colours[A_Index]
+            PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, currentColour, 0, Fast RGB
+            if (ErrorLevel = 0) {
+                return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
+            }
+        }
     }
-    return 100  ; Default to full MP if no matching colour is found
+
+    return 100  ; No colour found in any decile
 }
 
 ; Main loop to check HP/MP and use potions

@@ -50,7 +50,7 @@ MoveAndPickUp(direction) {
         key := (direction = "left") ? LeftKey : RightKey
         Send {%PickupKey% down}
         Loop, %ZPressCount% {
-            Send{%PickupKey%}
+            Send {%PickupKey%}
             Sleep, 20
         }
         Send {%PickupKey% up}

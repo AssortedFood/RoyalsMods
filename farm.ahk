@@ -85,10 +85,4 @@ MainLoop() {
     }
 }
 
-Pause
 MainLoop()
-
-
-F3::
-Pause
-return

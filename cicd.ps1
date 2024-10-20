@@ -33,4 +33,3 @@ $watcher.EnableRaisingEvents = $true
 
 # Keep the script running
 while ($true) { Start-Sleep 1 }
-

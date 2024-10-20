@@ -51,6 +51,7 @@ MoveAndPickUp(direction) {
         Send {%key% down}
         Sleep WalkDuration
         Send {%key% up}
+        Send {%PickupKey% up}
     }
 }
 

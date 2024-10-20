@@ -6,7 +6,7 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 DetectHiddenWindows, On
 
 F1::
-Send ^!{Tab}
+Send $^!{Tab}
 return
 
 F2::

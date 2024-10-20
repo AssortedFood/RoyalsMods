@@ -9,7 +9,7 @@ IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
 
-if IsMapleStoryActive() {
+; if IsMapleStoryActive() {
     Send, Oxidising
 }
 

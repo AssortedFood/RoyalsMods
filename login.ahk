@@ -10,5 +10,23 @@ IsMapleStoryActive() {
 }
 
 if IsMapleStoryActive() {
-    ; 
+    Send, Oxidising
 }
+
+; Load environment variable from .env file
+FileRead, envContent, .env
+
+; Parse the variable from the content
+Loop, Parse, envContent, `n, `r
+{
+    StringSplit, keyValue, A_LoopField, =
+    if (keyValue1 = "PASSWORD")
+    {
+        password := keyValue2
+        break
+    }
+}
+
+MsgBox, %password%
+
+return

@@ -10,8 +10,8 @@ IsMapleStoryActive() {
 }
 
 ; if IsMapleStoryActive() {
-    Send, Oxidising
-}
+;     Send, Oxidising
+; }
 
 ; Load environment variable from .env file
 FileRead, envContent, .env

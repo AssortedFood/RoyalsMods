@@ -96,5 +96,5 @@ Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File
 return
 
 F3::
-Send ^!{Tab} ;test
+Send ^!{Tab}
 return

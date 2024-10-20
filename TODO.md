@@ -1,5 +1,6 @@
 ### TODO
 
+- controller script that has alt-tab and refresh F keys
 - hp and mana pixel get
 - auto stats
 - auto buff (sprint, among others)

@@ -64,7 +64,7 @@ GetMPPercent() {
         Y1 := y1
         X2 := decileX2
         Y2 := y1 + boxHeight - 1
-        MsgBox % "X1: " . X1 . "`nY1: " . Y1 . "`nX2: " . X2 . "`nY2: " . Y2
+        MsgBox % "X1: " . X1 . "`nY1: " . Y1 . "`nX2: " . X2 . "`nY2: " . Y2 . "`nTarget: " . targetColour
         PixelSearch, foundX, foundY, X1, Y1, X2, y1 + Y2, targetColour, 30, Fast RGB
         if (ErrorLevel = 0) {
             return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)

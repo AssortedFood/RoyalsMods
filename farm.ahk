@@ -6,7 +6,7 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
 UnitsPerDirection := 25      ; Number of walk+attack units before turning around
-WalkDuration := 500         ; Duration of walking in milliseconds
+WalkDuration := 1000         ; Duration of walking in milliseconds
 AttackCount := 3
 AttackDelay := 30           ; Duration of attack key hold in milliseconds
 ZPressCount := 5            ; Number of Z presses for item pickup

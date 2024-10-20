@@ -39,7 +39,7 @@ MultiPress(actionKey, pressCount, interval) {
     if IsMapleStoryActive() {
         Loop, pressCount {
             PerformAction(actionKey, 20)
-            Sleep interval
+            Sleep, %interval%
         }
     }
 }

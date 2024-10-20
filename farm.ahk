@@ -45,7 +45,7 @@ MultiPress(actionKey, pressCount, interval) {
 ; Function: Move in a given direction (left or right)
 MoveAndPickUp(direction) {
     global WalkDuration, LeftKey, RightKey, PickupKey
-    ZPressCount := WalkDuration / 20
+    ZPressCount := Floor(WalkDuration / 20)
     if IsMapleStoryActive() {
         key := (direction = "left") ? LeftKey : RightKey
         Send {%PickupKey% down}

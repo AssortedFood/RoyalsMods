@@ -28,6 +28,7 @@ IsMapleStoryActive() {
 PerformAction(actionKey, count, delay := 50) {
     Loop, %count% {
         if IsMapleStoryActive() {
+            MsgBox
             Send {%actionKey%}
             Sleep, %delay%
         }

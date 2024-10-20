@@ -5,8 +5,9 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
-UnitsPerDirection := 30      ; Number of walk+attack units before turning around
-WalkDuration := 300         ; Duration of walking in milliseconds
+UnitsPerDirection := 25      ; Number of walk+attack units before turning around
+WalkDuration := 500         ; Duration of walking in milliseconds
+AttackCount := 3
 AttackDelay := 30           ; Duration of attack key hold in milliseconds
 ZPressCount := 5            ; Number of Z presses for item pickup
 ZPressInterval := 20        ; Interval between Z presses in milliseconds
@@ -16,7 +17,7 @@ LeftKey := "Left"           ; Key to walk left
 RightKey := "Right"         ; Key to walk right
 
 UnitCounter := 0
-Direction := "right"
+Direction := "left"
 
 ; Function: Check if MapleStory is active
 IsMapleStoryActive() {
@@ -24,11 +25,13 @@ IsMapleStoryActive() {
 }
 
 ; Function: Perform an action (like attacking or picking up items)
-PerformAction(actionKey, delay := 50) {
-    if IsMapleStoryActive() {
-        Send {%actionKey% down}
-        Sleep delay
-        Send {%actionKey% up}
+PerformAction(actionKey, count, delay := 50) {
+    Loop, %count% {
+        if IsMapleStoryActive() {
+            Send {%actionKey% down}
+            Sleep delay
+            Send {%actionKey% up}
+        }
     }
 }
 
@@ -71,7 +74,7 @@ MainLoop() {
         if IsMapleStoryActive() {
             ; Perform a unit (move + attack + pickup)
             MoveAndPickUp(Direction)
-            PerformAction(AttackKey, AttackDelay)
+            PerformAction(AttackKey, AttackCount, AttackDelay)
             MultiPress(PickupKey, ZPressCount, ZPressInterval)
 
             ; Increment the unit counter and check for direction toggle

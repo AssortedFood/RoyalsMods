@@ -88,4 +88,4 @@ F2::
     Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\RunFarm.ps1"
 Return
 
-;test 23423
+;test hello world

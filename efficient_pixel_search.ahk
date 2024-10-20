@@ -3,6 +3,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 #SingleInstance Force
 CoordMode, Pixel, Screen  ; Use screen coordinates for PixelSearch
+CoordMode, Mouse, Screen  ; Use screen coordinates for PixelSearch
 
 ; Function to search the screen for a specific colour with a variation
 SearchPixelColour(targetColour, variation) {

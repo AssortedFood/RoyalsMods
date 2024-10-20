@@ -25,6 +25,8 @@ Loop, Parse, envContent, `n, `r
 
 Loop, {
     if IsMapleStoryActive() {
+        Click, 450, 333
+        Sleep, 50
         Clipboard := "Oxidising"
         Send ^v
         Sleep, 50

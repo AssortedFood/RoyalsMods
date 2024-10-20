@@ -26,7 +26,7 @@ IsMapleStoryActive() {
 
 ; Function: Perform an action (like attacking or picking up items)
 PerformAction(actionKey, count, delay := 50) {
-    ; MsgBox % count
+    MsgBox % count
     Loop % count {
         if IsMapleStoryActive() {
             Send {%actionKey%}

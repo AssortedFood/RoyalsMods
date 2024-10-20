@@ -14,4 +14,3 @@ IsMapleStoryActive() {
 ; some function that presses the hp and mana keys
 ; some variable where i say how much hp and mana the current potions heal
 ; some variable where i declare which keys are for what
-; some function that activates my boosts macro

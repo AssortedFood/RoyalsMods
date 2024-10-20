@@ -86,15 +86,3 @@ MainLoop() {
 }
 
 MainLoop()
-
-F1::
-Pause
-return
-
-F2::
-Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\RunFarm.ps1"
-return
-
-F3::
-Send ^!{Tab}
-return

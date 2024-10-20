@@ -6,9 +6,9 @@ CoordMode, Pixel, Screen  ; Use screen coordinates for PixelSearch
 
 ; Function to search the whole screen for a specific colour with a variation
 SearchPixelColour(targetColour, variation) {
-    ; Get screen dimensions
-    SysGet, screenWidth, 78
-    SysGet, screenHeight, 79
+    ; Get screen dimensions using A_ScreenWidth and A_ScreenHeight
+    screenWidth := A_ScreenWidth
+    screenHeight := A_ScreenHeight
 
     ; Initialize an empty list to store coordinates of matches
     matches := ""
@@ -33,8 +33,11 @@ SearchPixelColour(targetColour, variation) {
         MsgBox, Found matches:`n%matches%
 }
 
-targetColour := "0xBABABA"  ; Define the target colour
-variation := 30  ; Set the colour variation
-SearchPixelColour(targetColour, variation)
-
+; Example usage of the function
+F4::
+{
+    targetColour := "0xBABABA"  ; Define the target colour
+    variation := 30  ; Set the colour variation
+    SearchPixelColour(targetColour, variation)
+}
 return

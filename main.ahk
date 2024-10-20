@@ -13,7 +13,6 @@ Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File
 return
 
 F3::
-; pause the scripts
 DetectHiddenWindows, On
 WM_COMMAND := 0x0111
 ID_FILE_PAUSE := 65403

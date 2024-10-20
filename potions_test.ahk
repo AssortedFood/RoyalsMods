@@ -12,8 +12,8 @@ GetHPPercent() {
     boxWidth := 150  ; Width of the entire box
     boxHeight := 12  ; Height of the box
 
-    ; Define the colours (in hexadecimal format)
-    colours := ["0xB8B8B8", "0xC3C3C3", "0xCCCCCC", "0x9C9C9C", "0xBEBEBE"]
+    ; Define the single target colour (in hexadecimal format)
+    targetColour := "0xBABABA"
 
     ; Calculate the width of each decile
     decileWidth := boxWidth / 10
@@ -27,13 +27,10 @@ GetHPPercent() {
         ; Define the coordinates of the current decile (box)
         decileX2 := decileX + decileWidth - 1  ; Right side of the decile
 
-        ; Loop through each colour and use PixelSearch for each decile
-        Loop, % colours.MaxIndex() {
-            currentColour := colours[A_Index]
-            PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, currentColour, 0, Fast RGB
-            if (ErrorLevel = 0) {
-                return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
-            }
+        ; Use PixelSearch to check for the target colour in the decile
+        PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, targetColour, 30, Fast RGB
+        if (ErrorLevel = 0) {
+            return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
         }
     }
 
@@ -47,8 +44,8 @@ GetMPPercent() {
     boxWidth := 150  ; Width of the entire box
     boxHeight := 12  ; Height of the box
 
-    ; Define the colours (in hexadecimal format)
-    colours := ["0xB8B8B8", "0xC3C3C3", "0xCCCCCC", "0x9C9C9C", "0xBEBEBE"]
+    ; Define the single target colour (in hexadecimal format)
+    targetColour := "0xBABABA"
 
     ; Calculate the width of each decile
     decileWidth := boxWidth / 10
@@ -62,13 +59,10 @@ GetMPPercent() {
         ; Define the coordinates of the current decile (box)
         decileX2 := decileX + decileWidth - 1  ; Right side of the decile
 
-        ; Loop through each colour and use PixelSearch for each decile
-        Loop, % colours.MaxIndex() {
-            currentColour := colours[A_Index]
-            PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, currentColour, 0, Fast RGB
-            if (ErrorLevel = 0) {
-                return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
-            }
+        ; Use PixelSearch to check for the target colour in the decile
+        PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, targetColour, 30, Fast RGB
+        if (ErrorLevel = 0) {
+            return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
         }
     }
 

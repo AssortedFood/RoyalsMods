@@ -1,17 +1,17 @@
 import pygetwindow as gw
 import pyautogui
 
-def resize_and_position_mapleroyals(width, height, position):
-    # Find the MapleRoyals window
-    windows = gw.getWindowsWithTitle('MapleRoyals')
+def resize_and_position_mapleStory(width, height, position):
+    # Find the MapleStory window
+    windows = gw.getWindowsWithTitle('MapleStory')
     if not windows:
-        print("MapleRoyals window not found.")
+        print("MapleStory window not found.")
         return
 
-    mapleroyals_window = windows[0]
+    mapleStory = windows[0]
 
-    mapleroyals_window.activate()
-    mapleroyals_window.resizeTo(width, height)
+    mapleStory.activate()
+    mapleStory.resizeTo(width, height)
     screen_width, screen_height = pyautogui.size()
 
     if position == "L":
@@ -27,12 +27,12 @@ def resize_and_position_mapleroyals(width, height, position):
         print(f"Provided position ({position}) is invalid.")
 
     # Move the window to the top-center position
-    mapleroyals_window.moveTo(x, y)
+    mapleStory.moveTo(x, y)
 
-    print(f"Resized and moved MapleRoyals window to {width}x{height}, top-center of the screen.")
+    print(f"Resized and moved MapleStory window to {width}x{height}, top-center of the screen.")
 
 # Example usage
 size = 340
 w = size * 4
 h = size * 3
-resize_and_position_mapleroyals(w, h, "R")
+resize_and_position_mapleStory(w, h, "M")

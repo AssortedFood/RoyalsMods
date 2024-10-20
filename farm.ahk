@@ -49,9 +49,10 @@ MoveAndPickUp(direction) {
     if IsMapleStoryActive() {
         key := (direction = "left") ? LeftKey : RightKey
         Send {%PickupKey% down}
-        Send {%key% down}
-        Sleep WalkDuration
-        Send {%key% up}
+        Loop, %ZPressCount% {
+            Send{PickupKey}
+            Sleep, 20
+        }
         Send {%PickupKey% up}
     }
 }

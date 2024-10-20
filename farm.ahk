@@ -82,7 +82,7 @@ MainLoop() {
                 ToggleDirection()
             }
         }
-        Sleep 1500  ; Adjust delay between loops for more organic timing
+        Sleep, 100  ; Adjust delay between loops for more organic timing
     }
 }
 

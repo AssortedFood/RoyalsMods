@@ -99,3 +99,4 @@ return
 
 F3::
 Send !{Tab}
+return

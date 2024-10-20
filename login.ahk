@@ -33,6 +33,9 @@ Loop, {
         Send {Tab}
         Sleep, 50
         Send %password%
+        Sleep, 50
+        Send {Enter}
+        Sleep, 50
         ExitApp
     }
 }

@@ -1,81 +1,46 @@
-#Persistent
-SendMode Input
-SetWorkingDir %A_ScriptDir%
-#SingleInstance Force
-SetTitleMatchMode, 2  ; Partial match for window titles
-CoordMode, Pixel, Screen
+package main
 
-GetHPPercent() {
-    ; Hardcoded box area (coordinates of the top-left corner, width, and height)
-    x1 := 336  ; Top-left corner X
-    y1 := 1055  ; Top-left corner Y
-    boxWidth := 150  ; Width of the entire box
-    boxHeight := 12  ; Height of the box
+import (
+	"fmt"
+	"image"
+	"image/png"
+	"os"
 
-    ; Define the single target colour (in hexadecimal format)
-    targetColour := "0xBABABA"
+	"github.com/kbinani/screenshot"
+)
 
-    ; Calculate the width of each decile
-    decileWidth := boxWidth / 10
+// Function to capture a screenshot of a specific region
+func captureScreenshot(x1, y1, x2, y2 int, filename string) {
+	bounds := image.Rect(x1, y1, x2, y2)
+	img, err := screenshot.CaptureRect(bounds)
+	if err != nil {
+		fmt.Println("Error capturing screenshot:", err)
+		return
+	}
 
-    ; Loop from decile 100 down to decile 10 (i.e., 10 to 1)
-    Loop, 10
-    {
-        decileId := 11 - A_Index  ; Calculate decile ID (100 to 10)
-        decileX := x1 + (decileId - 1) * decileWidth  ; Calculate X coordinate for this decile
+	// Save the screenshot to a file
+	file, err := os.Create(filename)
+	if err != nil {
+		fmt.Println("Error creating file:", err)
+		return
+	}
+	defer file.Close()
 
-        ; Define the coordinates of the current decile (box)
-        decileX2 := decileX + decileWidth - 1  ; Right side of the decile
+	err = png.Encode(file, img)
+	if err != nil {
+		fmt.Println("Error encoding image:", err)
+		return
+	}
 
-        ; Use PixelSearch to check for the target colour in the decile
-        PixelSearch, foundX, foundY, decileX, y1, decileX2, y1 + boxHeight - 1, targetColour, 30, Fast RGB
-        if (ErrorLevel = 0) {
-            return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
-        }
-    }
-
-    return 100  ; No colour found in any decile
+	fmt.Println("Screenshot saved to", filename)
 }
 
-GetMPPercent() {
-    ; Hardcoded box area (coordinates of the top-left corner, width, and height)
-    x1 := 498  ; Top-left corner X
-    y1 := 1055  ; Top-left corner Y
-    boxWidth := 150  ; Width of the entire box
-    boxHeight := 12  ; Height of the box
+func main() {
+	// Coordinates for HP (336, 1055) to (486, 1067)
+	captureScreenshot(336, 1055, 486, 1067, "hp.png")
 
-    ; Define the single target colour (in hexadecimal format)
-    targetColour := "0xBABABA"
+	// Coordinates for MP (498, 1055) to (648, 1067)
+	captureScreenshot(498, 1055, 648, 1067, "mp.png")
 
-    ; Calculate the width of each decile
-    decileWidth := boxWidth / 10
-
-    ; Loop from decile 100 down to decile 10 (i.e., 10 to 1)
-    Loop, 10
-    {
-        decileId := 11 - A_Index  ; Calculate decile ID (100 to 10)
-        decileX := x1 + (decileId - 1) * decileWidth  ; Calculate X coordinate for this decile
-
-        ; Define the coordinates of the current decile (box)
-        decileX2 := decileX + decileWidth - 1  ; Right side of the decile
-
-        ; Use PixelSearch to check for the target colour in the decile
-        X1 := decileX
-        Y1 := y1
-        X2 := decileX2
-        Y2 := y1 + boxHeight - 1
-        MsgBox % "X1: " . X1 . "`nY1: " . Y1 . "`nX2: " . X2 . "`nY2: " . Y2 . "`nTarget: " . targetColour
-        PixelSearch, foundX, foundY, X1, Y1, X2, y1 + Y2, targetColour, 30, Fast RGB
-        if (ErrorLevel = 0) {
-            return decileId * 10  ; Colour found, return decile ID (100, 90, etc.)
-        }
-    }
-
-    return 100  ; No colour found in any decile
+	fmt.Println("HP and MP screenshots captured.")
 }
-
-F4::
-hpValue := GetHPPercent()
-mpValue := GetMPPercent()
-MsgBox % "HP: " . hpValue . "`nMP: " . mpValue
-return

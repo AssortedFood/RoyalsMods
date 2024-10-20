@@ -43,4 +43,4 @@ Register-ObjectEvent $watcher "Changed" -Action $action
 $watcher.EnableRaisingEvents = $true
 
 # Keep the script running
-while ($true) { Start-Sleep 1 }
+while ($true) { Start-Sleep 3 }

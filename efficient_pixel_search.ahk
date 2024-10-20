@@ -51,4 +51,5 @@ MsgBox % "Starting search..."
 targetColour := "0xBABABA"  ; Define the target colour
 variation := 30  ; Set the colour variation
 SearchPixelColour(targetColour, variation)
+MsgBox % "Search complete."
 return

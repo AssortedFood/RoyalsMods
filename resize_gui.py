@@ -32,7 +32,7 @@ def resize_and_position_mapleStory(width, height, position):
     print(f"Resized and moved MapleStory window to {width}x{height}, top-center of the screen.")
 
 # Example usage
-size = 340
-w = size * 4
-h = size * 3
+size = 120
+w = size * 16
+h = size * 9
 resize_and_position_mapleStory(w, h, "M")

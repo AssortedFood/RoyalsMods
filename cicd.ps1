@@ -9,7 +9,7 @@ $watcher.Filter = "*.*"  # Watch all files in the directory
 $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite
 
 # Define the action to take when a change is detected
-$lastEventTime = Get-Date 
+$lastEventTime = Get-Date
 
 $action = {
     $currentEventTime = Get-Date

@@ -74,7 +74,6 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             MoveAndPickUp(Direction)
             PerformAction(AttackKey, AttackCount, AttackDelay)
-            MultiPress(PickupKey, ZPressCount, ZPressInterval)
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

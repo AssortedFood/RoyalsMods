@@ -8,7 +8,6 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 UnitsPerDirection := 25      ; Number of walk+attack units before turning around
 WalkDuration := 500         ; Duration of walking in milliseconds
 AttackCount := 3
-AttackDelay := 50           ; Duration of attack key hold in milliseconds
 ZPressCount := 5            ; Number of Z presses for item pickup
 ZPressInterval := 20        ; Interval between Z presses in milliseconds
 AttackKey := "Control"      ; Key to use for attacks (can change later)
@@ -67,13 +66,13 @@ ToggleDirection() {
 
 ; Main routine to handle walking and attacking
 MainLoop() {
-    global UnitsPerDirection, UnitCounter, Direction, AttackKey, AttackCount, AttackDelay, PickupKey, ZPressCount, ZPressInterval
+    global UnitsPerDirection, UnitCounter, Direction, AttackKey, AttackCount, PickupKey, ZPressCount, ZPressInterval
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
             ; Perform a unit (move + attack + pickup)
             MoveAndPickUp(Direction)
-            PerformAction(AttackKey, AttackCount, AttackDelay)
+            PerformAction(AttackKey, AttackCount)
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

@@ -1,6 +1,6 @@
 # Define the directory to watch
 $directoryToWatch = "C:\Users\Hamoon\Projects\RoyalsMods"
-$debounceTime = 3  # Delay in seconds to prevent multiple triggers
+$debounceTime = 5  # Delay in seconds to prevent multiple triggers
 
 # Set up the FileSystemWatcher for the directory
 $watcher = New-Object System.IO.FileSystemWatcher

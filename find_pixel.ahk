@@ -46,7 +46,7 @@ SearchPixelColour(targetColour, variation) {
 ; Example usage of the function
 F5::
 {
-    MsgBox % "Starting search..." ;
+    MsgBox % "Starting search..."
     targetColour := "0xBABABA"  ; Define the target colour
     variation := 30  ; Set the colour variation
     SearchPixelColour(targetColour, variation)

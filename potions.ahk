@@ -14,16 +14,6 @@ mpThreshold := 50  ; % MP threshold to trigger potion
 hpPotionsToUse := 1  ; Number of HP potions to use
 mpPotionsToUse := 1  ; Number of MP potions to use
 
-; Coordinates for HP and MP bar
-hpBarX := 100  ; X coordinate of HP bar
-hpBarY := 200  ; Y coordinate of HP bar
-mpBarX := 150  ; X coordinate of MP bar
-mpBarY := 200  ; Y coordinate of MP bar
-
-; Background colours of the bars (example: green for HP, blue for MP)
-hpBarColour := 0xFF0000  ; Colour for HP bar
-mpBarColour := 0x0000FF  ; Colour for MP bar
-
 ; Function: Check if MapleStory is active
 IsMapleStoryActive() {
     return WinActive("MapleStory")

@@ -16,5 +16,5 @@ F3::
 DetectHiddenWindows, On
 WM_COMMAND := 0x0111
 ID_FILE_PAUSE := 65403
-PostMessage, WM_COMMAND, ID_FILE_PAUSE,,, C:\Users\oxi\Projects\RoyalsMods\farm.ahk ahk_class AutoHotkey
+PostMessage, WM_COMMAND, ID_FILE_PAUSE,,, "C:\Users\oxi\Projects\RoyalsMods\farm.ahk" ahk_class AutoHotkey
 return

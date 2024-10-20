@@ -5,15 +5,12 @@ import (
 	"image"
 	"image/png"
 	"os"
+
 	"github.com/kbinani/screenshot"
 )
 
-func main() {
-	// Define the region you want to capture
-	x1, y1 := 336, 0
-	x2, y2 := 1067, screenshot.GetDisplayBounds(0).Dy()
-
-	// Capture the screenshot of the specified region
+// Function to capture a screenshot of a specific region
+func captureScreenshot(x1, y1, x2, y2 int, filename string) {
 	bounds := image.Rect(x1, y1, x2, y2)
 	img, err := screenshot.CaptureRect(bounds)
 	if err != nil {
@@ -22,7 +19,7 @@ func main() {
 	}
 
 	// Save the screenshot to a file
-	file, err := os.Create("screenshot.png")
+	file, err := os.Create(filename)
 	if err != nil {
 		fmt.Println("Error creating file:", err)
 		return
@@ -35,5 +32,15 @@ func main() {
 		return
 	}
 
-	fmt.Println("Screenshot saved to screenshot.png")
+	fmt.Println("Screenshot saved to", filename)
+}
+
+func main() {
+	// Coordinates for HP (336, 1055) to (486, 1067)
+	captureScreenshot(336, 1055, 486, 1067, "hp.png")
+
+	// Coordinates for MP (498, 1055) to (648, 1067)
+	captureScreenshot(498, 1055, 648, 1067, "mp.png")
+
+	fmt.Println("HP and MP screenshots captured.")
 }

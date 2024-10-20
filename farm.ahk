@@ -81,7 +81,7 @@ MainLoop() {
     }
 }
 
-MainLoop() ;test
+MainLoop()
 
 F1::Pause
 

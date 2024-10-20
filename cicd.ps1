@@ -12,6 +12,12 @@ $watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite
 # Define the action to take when a change is detected
 $action = {
     $filePath = $Event.SourceEventArgs.FullPath
+
+    # Ignore changes in the .git directory
+    if ($filePath -like "*\.git\*") {
+        return
+    }
+
     $currentEventTime = Get-Date
 
     # Get the last write time for the file

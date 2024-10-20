@@ -78,7 +78,7 @@ SearchColoursInDeciles() {
         }
     }
 
-    return false  ; No colour found in any decile
+    return 100  ; No colour found in any decile
 }
 
 ; Function: Get HP percentage based on the bar's colour

@@ -14,5 +14,5 @@ Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File
 return
 
 F3::
-PostMessage, 0x0111, 65306,,, farm.ahk - AutoHotkey
+PostMessage, 0x0111, 65306,,, farm.ahk
 return

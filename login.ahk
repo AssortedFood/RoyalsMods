@@ -32,4 +32,4 @@ if IsMapleStoryActive() {
     Send %password%
 }
 
-return
+ExitApp

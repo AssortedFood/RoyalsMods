@@ -74,9 +74,10 @@ MainLoop() {
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
             stime := 20
-            mtime := 200
+            mtime := 400
             ltime := 1200
 
+            Sleep, %
             Send {Right down}
             Sleep, %stime%
             Send {Shift}

@@ -73,7 +73,7 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
-            stime := 100
+            stime := 300
             ltime := 1000
 
             Send {Control}

@@ -75,7 +75,6 @@ MainLoop() {
             ; PerformAction(AttackKey, AttackCount)
             Send {Control}
             Sleep, 20
-            MsgBox % Direction
             Send {z down}
             Send {%Direction% down}
             Sleep, 20

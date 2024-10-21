@@ -71,8 +71,9 @@ MainLoop() {
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
             ; Perform a unit (move + attack + pickup)
-            MoveAndPickUp(Direction)
+            ; MoveAndPickUp(Direction)
             PerformAction(AttackKey, AttackCount)
+            PerformAction("Shift", AttackCount)
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

@@ -73,8 +73,11 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             PerformAction(AttackKey, AttackCount)
-            MsgBox % Direction
-            Send {%Direction%}{Shift}
+            Send {%Direction% down}
+            Send {Shift}
+            Sleep, 10
+            Send {%Direction% up}
+
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

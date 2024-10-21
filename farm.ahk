@@ -100,6 +100,8 @@ MainLoop() {
             Send {Control}
             Sleep, %stime%
             Send {z down}
+            Send {Alt}
+            Sleep, %stime%
             Send {Up down}
             Sleep, %stime%
             Send {Shift}

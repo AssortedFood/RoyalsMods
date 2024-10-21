@@ -90,7 +90,7 @@ MainLoop() {
             Send {Up down}
             Send {Shift}
             Sleep, %stime%
-            Send {Down up}
+            Send {Up up}
             Sleep, %stime%
 
             ; Increment the unit counter and check for direction toggle

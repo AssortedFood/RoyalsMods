@@ -76,42 +76,37 @@ MainLoop() {
             Send {Control}
             Sleep, 50
             Send {z down}
-            Send {%Direction% down}
-            Sleep, 50
-            Send {Shift}
-            Sleep, 50
-            Send {%Direction% up}
+            Send {Right}{Shift}
             Send {z up}
 
             Send {Control}
             Sleep, 50
             Send {z down}
-            Send {%Direction% down}
-            Sleep, 50
-            Send {Shift}
-            Sleep, 50
-            Send {%Direction% up}
+            Send {Right}{Shift}
             Send {z up}
 
             Send {Control}
             Sleep, 50
             Send {z down}
-            Send {Up down}
-            Sleep, 50
-            Send {Shift}
-            Sleep, 50
-            Send {Up up}
+            Send {Up}{Shift}
             Send {z up}
-            Sleep, 50
 
             Send {Control}
             Sleep, 50
             Send {z down}
-            Send {Down down}
+            Send {Left}{Shift}
+            Send {z up}
+
+            Send {Control}
             Sleep, 50
-            Send {Shift}
+            Send {z down}
+            Send {Left}{Shift}
+            Send {z up}
+
+            Send {Control}
             Sleep, 50
-            Send {Down up}
+            Send {z down}
+            Send {Down}{Shift}
             Send {z up}
 
             ; Increment the unit counter and check for direction toggle

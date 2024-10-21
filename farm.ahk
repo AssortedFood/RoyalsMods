@@ -77,7 +77,7 @@ MainLoop() {
             mtime := 200
             ltime := 1200
 
-            Send{Right}{Shift}
+            Send {Right}{Shift}
 
             ; Send {Control}
             ; Sleep, %ltime%

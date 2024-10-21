@@ -75,53 +75,23 @@ MainLoop() {
             ; PerformAction(AttackKey, AttackCount)
             stime := 35
 
+            Send {Control}
+            Sleep, %stime%
+            Send {Down down}
+            Send {Shift}
+            Sleep, %stime%
+            Send {Down up}
+            Sleep, %stime%
+
+            Send {Control}
+            Sleep, %stime%
             Send {Alt}
-            ; Send {Control}
-            ; Sleep, %stime%
-            ; Send {z down}
-            ; Send {Right down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Sleep, %stime%
-            ; Send {Right up}
-            ; Send {z up}
-            ; Sleep, %stime%
-
-            ; Send {Control}
-            ; Sleep, %stime%
-            ; Send {z down}
-            ; Send {Left down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Sleep, %stime%
-            ; Send {Left up}
-            ; Send {z up}
-            ; Sleep, %stime%
-
-            ; Send {Control} 
-            ; Sleep, %stime%
-            ; Send {z down}
-            ; Send {Alt down}
-            ; Sleep, %stime%
-            ; Send {Up down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Sleep, %stime%
-            ; Send {Up up}
-            ; Send {Alt up}
-            ; Send {z up}
-            ; Sleep, %stime%
-
-            ; Send {Control}
-            ; Sleep, %stime%
-            ; Send {z down}
-            ; Send {Down down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Sleep, %stime%
-            ; Send {Down up}
-            ; Send {z up}
-            ; Sleep, %stime%
+            Sleep, 10
+            Send {Up down}
+            Send {Shift}
+            Sleep, %stime%
+            Send {Down up}
+            Sleep, %stime%
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

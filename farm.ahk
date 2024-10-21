@@ -81,6 +81,7 @@ MainLoop() {
             Sleep, %mtime%
             Send {Shift}
             Send {Right up}
+            Sleep, %ltime%
 
             ; Send {Control}
             ; Sleep, %ltime%

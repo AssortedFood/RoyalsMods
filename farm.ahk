@@ -74,11 +74,15 @@ MainLoop() {
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
             Send {Control}
+            Sleep, 50
             Send {z down}
             Send {%Direction% down}
+            Sleep, 50
             Send {Shift}
+            Sleep, 50
             Send {%Direction% up}
             Send {z up}
+            Sleep, 50
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

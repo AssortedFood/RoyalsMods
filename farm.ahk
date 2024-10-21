@@ -72,13 +72,16 @@ MainLoop() {
         if IsMapleStoryActive() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
-            PerformAction(AttackKey, AttackCount)
+            ; PerformAction(AttackKey, AttackCount)
+            Send {Control}
             Sleep, 20
+            Send {z down}
             Send {%Direction% down}
             Sleep, 20
             Send {Shift}
             Sleep, 20
             Send {%Direction% up}
+            Send {z up}
 
 
             ; Increment the unit counter and check for direction toggle

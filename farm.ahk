@@ -74,12 +74,12 @@ MainLoop() {
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
             Send {Control}
-            Sleep, 20
+            Sleep, 30
             Send {z down}
             Send {%Direction% down}
-            Sleep, 20
+            Sleep, 30
             Send {Shift}
-            Sleep, 20
+            Sleep, 30
             Send {%Direction% up}
             Send {z up}
 

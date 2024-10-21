@@ -73,7 +73,7 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             PerformAction(AttackKey, AttackCount)
-            PerformAction("Shift", AttackCount)
+            PerformAction("Shift", 2)
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

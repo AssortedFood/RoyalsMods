@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
-UnitsPerDirection := 5      ; Number of walk+attack units before turning around
+UnitsPerDirection := 8      ; Number of walk+attack units before turning around
 WalkDuration := 300         ; Duration of walking in milliseconds
 AttackCount := 1
 ZPressCount := 5            ; Number of Z presses for item pickup

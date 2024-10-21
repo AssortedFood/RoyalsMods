@@ -73,23 +73,24 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
-            stime := 1000
+            stime := 20
+            ltime := 1000
 
             Send {Control}
-            Sleep, %stime%
+            Sleep, %ltime%
             Send {Down down}
             Send {Shift}
             Send {Down up}
-            Sleep, %stime%
+            Sleep, %ltime%
 
             Send {Control}
-            Sleep, %stime%
+            Sleep, %ltime%
             Send {Alt}
             Sleep, 10
             Send {Up down}
             Send {Shift}
             Send {Up up}
-            Sleep, %stime%
+            Sleep, %ltime%
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

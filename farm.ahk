@@ -73,46 +73,51 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
+            stime := 35
+
             Send {Control}
-            Sleep, 50
+            Sleep, %stime%
             Send {z down}
             Send {Right down}
-            Sleep, 50
+            Sleep, %stime%
             Send {Shift}
-            Sleep, 50
+            Sleep, %stime%
             Send {Right up}
             Send {z up}
+            Sleep, %stime%
 
             Send {Control}
-            Sleep, 50
+            Sleep, %stime%
             Send {z down}
             Send {Left down}
-            Sleep, 50
+            Sleep, %stime%
             Send {Shift}
-            Sleep, 50
+            Sleep, %stime%
             Send {Left up}
             Send {z up}
+            Sleep, %stime%
 
             Send {Control}
-            Sleep, 50
+            Sleep, %stime%
             Send {z down}
             Send {Up down}
-            Sleep, 20
+            Sleep, %stime%
             Send {Shift}
-            Sleep, 50
+            Sleep, %stime%
             Send {Up up}
             Send {z up}
-            Sleep, 50
+            Sleep, %stime%
 
             Send {Control}
-            Sleep, 50
+            Sleep, %stime%
             Send {z down}
             Send {Down down}
-            Sleep, 50
+            Sleep, %stime%
             Send {Shift}
-            Sleep, 50
+            Sleep, %stime%
             Send {Down up}
             Send {z up}
+            Sleep, %stime%
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

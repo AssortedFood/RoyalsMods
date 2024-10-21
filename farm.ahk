@@ -73,9 +73,10 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             PerformAction(AttackKey, AttackCount)
+            Sleep, 20
             Send {%Direction% down}
             Send {Shift}
-            Sleep, 10
+            Sleep, 20
             Send {%Direction% up}
 
 

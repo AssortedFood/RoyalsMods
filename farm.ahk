@@ -75,6 +75,7 @@ MainLoop() {
             PerformAction(AttackKey, AttackCount)
             Sleep, 20
             Send {%Direction% down}
+            Sleep, 20
             Send {Shift}
             Sleep, 20
             Send {%Direction% up}

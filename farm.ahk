@@ -75,7 +75,7 @@ MainLoop() {
             ; PerformAction(AttackKey, AttackCount)
             stime := 50
             mtime := 200
-            ltime := 800
+            ltime := 1200
 
             Send {Control}
             Sleep, %ltime%

@@ -75,6 +75,7 @@ MainLoop() {
             ; PerformAction(AttackKey, AttackCount)
             Send {Control}
             Sleep, 20
+            MsgBox % Direction
             Send {z down}
             Send {%Direction% down}
             Sleep, 20
@@ -82,7 +83,6 @@ MainLoop() {
             Sleep, 20
             Send {%Direction% up}
             Send {z up}
-
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

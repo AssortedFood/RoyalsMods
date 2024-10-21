@@ -79,6 +79,7 @@ MainLoop() {
             Send {Control}
             Sleep, %ltime%
             Send {Down down}
+            Sleep, %stime%
             Send {Shift}
             Send {Down up}
             Sleep, %ltime%
@@ -86,8 +87,9 @@ MainLoop() {
             Send {Control}
             Sleep, %ltime%
             Send {Alt}
-            Sleep, 10
+            Sleep, %stime%
             Send {Up down}
+            Sleep, %stime%
             Send {Shift}
             Send {Up up}
             Sleep, %ltime%

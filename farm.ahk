@@ -73,7 +73,7 @@ MainLoop() {
             ; Perform a unit (move + attack + pickup)
             ; MoveAndPickUp(Direction)
             ; PerformAction(AttackKey, AttackCount)
-            stime := 500
+            stime := 1000
 
             Send {Control}
             Sleep, %stime%

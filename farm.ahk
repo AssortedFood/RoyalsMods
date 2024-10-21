@@ -77,23 +77,25 @@ MainLoop() {
             mtime := 200
             ltime := 1200
 
-            Send {Control}
-            Sleep, %ltime%
-            Send {Down down}
-            Sleep, %stime%
-            Send {Shift}
-            Send {Down up}
-            Sleep, %ltime%
+            Send{Right}{Shift}
 
-            Send {Control}
-            Sleep, %ltime%
-            Send {Alt}
-            Sleep, %mtime%
-            Send {Up down}
-            Sleep, %stime%
-            Send {Shift}
-            Send {Up up}
-            Sleep, %ltime%
+            ; Send {Control}
+            ; Sleep, %ltime%
+            ; Send {Down down}
+            ; Sleep, %stime%
+            ; Send {Shift}
+            ; Send {Down up}
+            ; Sleep, %ltime%
+
+            ; Send {Control}
+            ; Sleep, %ltime%
+            ; Send {Alt}
+            ; Sleep, %mtime%
+            ; Send {Up down}
+            ; Sleep, %stime%
+            ; Send {Shift}
+            ; Send {Up up}
+            ; Sleep, %ltime%
 
             ; Increment the unit counter and check for direction toggle
             UnitCounter++

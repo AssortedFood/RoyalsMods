@@ -97,16 +97,17 @@ MainLoop() {
             Send {z up}
             Sleep, %stime%
 
-            Send {Control}
+            Send {Control} 
             Sleep, %stime%
             Send {z down}
-            Send {Alt}
+            Send {Alt down}
             Sleep, %stime%
             Send {Up down}
             Sleep, %stime%
             Send {Shift}
             Sleep, %stime%
             Send {Up up}
+            Send {Alt up}
             Send {z up}
             Sleep, %stime%
 

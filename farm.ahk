@@ -77,18 +77,16 @@ MainLoop() {
 
             Send {Control}
             Sleep, %stime%
-            Send {Down down}
+            Send {Down}
             Send {Shift}
-            Send {Down up}
             Sleep, %stime%
 
             Send {Control}
             Sleep, %stime%
             Send {Alt}
             Sleep, 10
-            Send {Up down}
+            Send {Up}
             Send {Shift}
-            Send {Up up}
             Sleep, %stime%
 
             ; Increment the unit counter and check for direction toggle

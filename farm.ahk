@@ -12,8 +12,8 @@ ZPressCount := 5            ; Number of Z presses for item pickup
 ZPressInterval := 20        ; Interval between Z presses in milliseconds
 AttackKey := "Control"      ; Key to use for attacks (can change later)
 PickupKey := "z"            ; Key to use for item pickup
-LeftKey := "Left"           ; Key to walk left
-RightKey := "Right"         ; Key to walk right
+LeftKey := "Left"           ; Key to walk Left
+RightKey := "Right"         ; Key to walk Right
 
 UnitCounter := 0
 Direction := "Left"
@@ -43,12 +43,12 @@ MultiPress(actionKey, pressCount, interval) {
     }
 }
 
-; Function: Move in a given direction (left or right)
+; Function: Move in a given direction (Left or right)
 MoveAndPickUp(direction) {
     global WalkDuration, LeftKey, RightKey, PickupKey
     ZPressCount := Floor(WalkDuration / 20)
     if IsMapleStoryActive() {
-        key := (direction = "left") ? LeftKey : RightKey
+        key := (direction = "Left") ? LeftKey : RightKey
         Send {%key% down}
         Loop, %ZPressCount% {
             Send {%PickupKey%}

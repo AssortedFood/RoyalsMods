@@ -80,7 +80,7 @@ MainLoop() {
             Send {Control}
             Sleep, %mtime%
 
-            Send {%Direction% down} 
+            Send {%Direction% down}
             Sleep, %stime%
             Send {Shift}
             Sleep, %stime%

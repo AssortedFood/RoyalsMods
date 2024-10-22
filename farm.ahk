@@ -77,12 +77,34 @@ MainLoop() {
             mtime := 400
             ltime := 1200
 
+            Send {Control}
             Sleep, %mtime%
-            Send {Right down}
+
+            Send {%Direction% down} 
             Sleep, %stime%
             Send {Shift}
             Sleep, %stime%
-            Send {Right up}
+            Send {%Direction% up}
+            Sleep, %ltime%
+
+            Send {Control}
+            Sleep, %mtime%
+            
+            Send {%Direction% down}
+            Sleep, %stime%
+            Send {Shift}
+            Sleep, %stime%
+            Send {%Direction% up}
+            Sleep, %ltime%
+
+            Send {Control}
+            Sleep, %mtime%
+            
+            Send {%Direction% down}
+            Sleep, %stime%
+            Send {Shift}
+            Sleep, %stime%
+            Send {%Direction% up}
             Sleep, %ltime%
 
             ; Send {Control}

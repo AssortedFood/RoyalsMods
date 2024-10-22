@@ -61,7 +61,7 @@ MoveAndPickUp(direction) {
 ; Function: Toggle direction after a set number of units
 ToggleDirection() {
     global Direction
-    Direction := (Direction = "left") ? "right" : "left"
+    Direction := (Direction = "Left") ? "Right" : "Left"
 }
 
 ; Main routine to handle walking and attacking

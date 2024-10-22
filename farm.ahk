@@ -43,7 +43,7 @@ MultiPress(actionKey, pressCount, interval) {
     }
 }
 
-; Function: Move in a given direction (Left or right)
+; Function: Move in a given direction (Left or Right)
 MoveAndPickUp(direction) {
     global WalkDuration, LeftKey, RightKey, PickupKey
     ZPressCount := Floor(WalkDuration / 20)

@@ -10,6 +10,11 @@ Send ^!{Tab}
 return
 
 F2::
+Send {Left up}
+Send {Right up}
+Send {Up up}
+Send {Down up}
+PostMessage, 0x0111, 65306,,, farm.ahk
 Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\UpdateAndRunAsAdmin.ps1"
 return
 

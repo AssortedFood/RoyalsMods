@@ -25,7 +25,7 @@ ToggleDirection() {
 
 ; Main routine to handle walking and attacking
 MainLoop() {
-    global UnitsPerDirection, UnitCounter, Direction, AttackKey, AttackCount, PickupKey, ZPressCount, ZPressInterval
+    global UnitsPerDirection, UnitCounter, Direction
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {

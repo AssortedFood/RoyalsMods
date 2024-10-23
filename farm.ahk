@@ -23,41 +23,6 @@ IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
 
-; Function: Perform an action (like attacking or picking up items)
-PerformAction(actionKey, count, delay := 50) {
-    Loop % count {
-        if IsMapleStoryActive() {
-            Send {%actionKey%}
-            Sleep, %delay%
-        }
-    }
-}
-
-; Function: Perform multiple presses (e.g., Z for item pickup)
-MultiPress(actionKey, pressCount, interval) {
-    if IsMapleStoryActive() {
-        Loop, pressCount {
-            PerformAction(actionKey, 20)
-            Sleep, %interval%
-        }
-    }
-}
-
-; Function: Move in a given direction (Left or Right)
-MoveAndPickUp(direction) {
-    global WalkDuration, LeftKey, RightKey, PickupKey
-    ZPressCount := Floor(WalkDuration / 20)
-    if IsMapleStoryActive() {
-        key := (direction = "Left") ? LeftKey : RightKey
-        Send {%key% down}
-        Loop, %ZPressCount% {
-            Send {%PickupKey%}
-            Sleep, 20
-        }
-        Send {%key% up}
-    }
-}
-
 ; Function: Toggle direction after a set number of units
 ToggleDirection() {
     global Direction

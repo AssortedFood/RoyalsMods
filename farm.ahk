@@ -73,21 +73,19 @@ MainLoop() {
             stime := 500
             mtime := 900 ;850 plus some leniency
             
-            Loop, 5 {
-                Send {Del}
-                Sleep, %stime%
-                Send {Ins}
-                Sleep, %stime%
+            Send {Del}
+            Sleep, %stime%
+            Send {Ins}
+            Sleep, %stime%
 
-                Loop, %UnitsPerDirection% {
-                    Send {%Direction% down}
-                    Send {Ctrl}
-                    Send {Shift}
-                    Sleep, %mtime%
-                    Send {%Direction% up}
-                    ToggleDirection()
+            Loop, %UnitsPerDirection% {
+                Send {%Direction% down}
+                Send {Ctrl}
+                Send {Shift}
+                Sleep, %mtime%
+                Send {%Direction% up}
+                ToggleDirection()
                 }
-            }
         }
     }
 }

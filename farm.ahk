@@ -71,7 +71,7 @@ MainLoop() {
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
             ; hold right
-            Send {%Direction% down}
+            Send {%Direction% down} 
             Sleep, 4000
             Send {%Direction% up}
             ; some action then switch direction and loop

@@ -74,7 +74,7 @@ MainLoop() {
             mtime := 900 ;850 plus some leniency
             
             Loop, 5 {
-                Send {Home}
+                Send {Del}
                 Sleep, %stime%
                 Send {Ins}
                 Sleep, %stime%

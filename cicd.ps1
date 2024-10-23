@@ -45,7 +45,7 @@ $action = {
         # Run Git commands
         git add .
         git commit -m "Auto-commit: $datetime"
-        git push -u origin main
+        git push
 
         Write-Host "Git push completed."
     }

@@ -70,62 +70,11 @@ MainLoop() {
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
-            ; Perform a unit (move + attack + pickup)
-            ; MoveAndPickUp(Direction)
-            ; PerformAction(AttackKey, AttackCount)
-            stime := 20
-            mtime := 400
-            ltime := 1200
-
-            Send {Control}
-            Sleep, %mtime%
-
-            Send {%Direction% down}
-            Sleep, %stime%
-            Send {Shift}
-            Sleep, %stime%
-            Send {%Direction% up}
-            Sleep, %ltime%
-
-            Send {Control}
-            Sleep, %mtime%
-            
-            Send {%Direction% down}
-            Sleep, %stime%
-            Send {Shift}
-            Sleep, %stime%
-            Send {%Direction% up}
-            Sleep, %ltime%
-
-            Send {Control}
-            Sleep, %mtime%
-            
-            Send {%Direction% down}
-            Sleep, %stime%
-            Send {Shift}
-            Sleep, %stime%
-            Send {%Direction% up}
-            Sleep, %ltime%
-
-            ; Send {Control}
-            ; Sleep, %ltime%
-            ; Send {Down down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Send {Down up}
-            ; Sleep, %ltime%
-
-            ; Send {Control}
-            ; Sleep, %ltime%
-            ; Send {Alt}
-            ; Sleep, %mtime%
-            ; Send {Up down}
-            ; Sleep, %stime%
-            ; Send {Shift}
-            ; Send {Up up}
-            ; Sleep, %ltime%
-
-            ; Increment the unit counter and check for direction toggle
+            ; hold right
+            ; some action then switch direction and loop
+            ; then test the attack tele combo
+            ; combine it all
+            ; Increment the unit counter and check for direction toggle 
             UnitCounter++
             if (UnitCounter >= UnitsPerDirection) {
                 UnitCounter := 0

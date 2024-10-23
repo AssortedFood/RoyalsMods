@@ -12,3 +12,7 @@ return
 F2::
 Run, powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Users\oxi\Projects\RoyalsMods\UpdateAndRunAsAdmin.ps1"
 return
+
+F3::
+PostMessage, 0x0111, 65306,,, farm.ahk
+return

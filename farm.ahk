@@ -66,5 +66,9 @@ MainLoop() {
 MainLoop()
 
 F3::
+Send {Left up}
+Send {Right up}
+Send {Up up}
+Send {Down up}
 Pause
 return

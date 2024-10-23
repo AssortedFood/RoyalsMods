@@ -86,7 +86,7 @@ MainLoop() {
                 Send {%Direction% up}
                 }
             
-                ToggleDirection()
+            ToggleDirection()
         }
     }
 }

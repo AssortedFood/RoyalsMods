@@ -71,6 +71,9 @@ MainLoop() {
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
             ; hold right
+            Send {%Direction% down}
+            Sleep, 10000
+            Send {%Direction% up}
             ; some action then switch direction and loop
             ; then test the attack tele combo
             ; combine it all

@@ -64,3 +64,7 @@ MainLoop() {
 }
 
 MainLoop()
+
+F3::
+Pause
+return

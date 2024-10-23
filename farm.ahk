@@ -22,6 +22,15 @@ ToggleDirection() {
     Direction := (Direction = "Left") ? "Right" : "Left"
 }
 
+BoostCheck() {
+    ; global some timer at the top (lowest boost cd)
+    ; when boostcheck runs it takes A_Now and compares it to A_Last time it ran and if its over the cd timer it casts and resets A_Last
+}
+
+FeedPet() {
+    ;basically the same as boostcheck but for the pet
+}
+
 ; Main routine to handle walking and attacking
 MainLoop() {
     global UnitsPerDirection, UnitCounter, Direction

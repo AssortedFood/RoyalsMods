@@ -70,7 +70,7 @@ MainLoop() {
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
-            stime := 500
+            stime := 800
             mtime := 900 ;850 plus some leniency
             
             Send {Del}

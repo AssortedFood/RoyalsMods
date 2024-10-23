@@ -87,6 +87,7 @@ MainLoop() {
             ; combine it all
             ; Increment the unit counter and check for direction toggle 
             UnitCounter++
+            MsgBox % UnitCounter
             if (UnitCounter >= UnitsPerDirection) {
                 UnitCounter := 0
                 ToggleDirection()

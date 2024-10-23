@@ -1,6 +1,6 @@
 ### TODO
 
-- ~~controller script that has alt-tab and refresh F keys~~
+- replace cicd.ps1 with sshing into the vm directly
 - auto town portal if below % hp
 - auto stats
 - auto buff (sprint, among others)

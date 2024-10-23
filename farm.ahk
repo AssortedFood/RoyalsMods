@@ -16,7 +16,7 @@ LeftKey := "Left"           ; Key to walk Left
 RightKey := "Right"         ; Key to walk Right
 
 UnitCounter := 0
-Direction := "Left"
+Direction := "Right"
 
 ; Function: Check if MapleStory is active
 IsMapleStoryActive() {

@@ -37,16 +37,16 @@ MainLoop() {
             Send {Ins}
             Sleep, %stime%
 
+            
+            Send {%Direction% down}
             Loop, %UnitsPerDirection% {
-                Send {%Direction% down}
                 Send {Shift}
                 Send {Ctrl}
                 Sleep, %mtime%
                 Send {Ctrl}
-                Send {Shift}
                 Sleep, %mtime%
-                Send {%Direction% up}
                 }
+                Send {%Direction% up}
             
             ToggleDirection()
         }

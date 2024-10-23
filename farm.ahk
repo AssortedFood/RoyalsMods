@@ -72,7 +72,6 @@ MainLoop() {
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
             mtime := 900 ;850 plus some leniency
-            ; hold right
             Send {%Direction% down}
             
             Loop, %UnitsPerDirection% {
@@ -82,16 +81,8 @@ MainLoop() {
             }
 
             Send {%Direction% up}
-            ; some action then switch direction and loop
-            ; then test the attack tele combo
-            ; combine it all
-            ; Increment the unit counter and check for direction toggle 
-            UnitCounter++
-            MsgBox % UnitCounter
-            if (UnitCounter >= UnitsPerDirection) {
-                UnitCounter := 0
-                ToggleDirection()
-            }
+
+            ToggleDirection()
         }
         ; Sleep, 100  ; Adjust delay between loops for more organic timing
     }

@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
-UnitsPerDirection := 1      ; Number of walk+attack units before turning around
+UnitsPerDirection := 4      ; Number of walk+attack units before turning around
 WalkDuration := 300         ; Duration of walking in milliseconds
 AttackCount := 1
 ZPressCount := 5            ; Number of Z presses for item pickup
@@ -70,9 +70,16 @@ MainLoop() {
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
+            mtime := 900 ;850 plus some leniency
             ; hold right
             Send {%Direction% down}
-            Sleep, 4000
+            
+            Loop, %UnitsPerDirection% {
+            Send {Ctrl}
+            Send {Shift}
+            Sleep, %mtime%
+            }
+
             Send {%Direction% up}
             ; some action then switch direction and loop
             ; then test the attack tele combo

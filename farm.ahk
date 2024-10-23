@@ -81,6 +81,8 @@ MainLoop() {
             Loop, %UnitsPerDirection% {
                 Send {%Direction% down}
                 Send {Ctrl}
+                Sleep, %mtime%
+                Send {Ctrl}
                 Send {Shift}
                 Sleep, %mtime%
                 Send {%Direction% up}

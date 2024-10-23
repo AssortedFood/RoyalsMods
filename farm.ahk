@@ -62,6 +62,7 @@ MoveAndPickUp(direction) {
 ToggleDirection() {
     global Direction
     Direction := (Direction = "Left") ? "Right" : "Left"
+    MsgBox % Direction
 }
 
 ; Main routine to handle walking and attacking

@@ -8,7 +8,6 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 UnitsPerDirection := 9      ; Number of walk+attack units before turning around
 LeftKey := "Left"           ; Key to walk Left
 RightKey := "Right"         ; Key to walk Right
-
 UnitCounter := 0
 Direction := "Right"
 

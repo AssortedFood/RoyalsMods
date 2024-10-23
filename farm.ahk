@@ -70,18 +70,24 @@ MainLoop() {
 
     Loop, {  ; Start of the while loop
         if IsMapleStoryActive() {
+            stime := 500
             mtime := 900 ;850 plus some leniency
-            Send {%Direction% down}
             
-            Loop, %UnitsPerDirection% {
-            Send {Ctrl}
-            Send {Shift}
-            Sleep, %mtime%
+            Loop, 5 {
+                Send {Home}
+                Sleep, %stime%
+                Send {Ins}
+                Sleep, %stime%
+
+                Loop, %UnitsPerDirection% {
+                    Send {%Direction% down}
+                    Send {Ctrl}
+                    Send {Shift}
+                    Sleep, %mtime%
+                    Send {%Direction% up}
+                    ToggleDirection()
+                }
             }
-
-            Send {%Direction% up}
-
-            ToggleDirection()
         }
     }
 }

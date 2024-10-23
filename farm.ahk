@@ -84,8 +84,9 @@ MainLoop() {
                 Send {Shift}
                 Sleep, %mtime%
                 Send {%Direction% up}
-                ToggleDirection()
                 }
+            
+                ToggleDirection()
         }
     }
 }

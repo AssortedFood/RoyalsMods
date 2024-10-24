@@ -10,17 +10,18 @@ IsMapleStoryActive() {
 }
 
 stime := 100
-
-Loop, 100 {
-    Send {Space}
-    Sleep, %stime%
-    Send {Left}
-    Sleep, %stime%
-    Send {Left}
-    Sleep, %stime%
-    Send {Enter}
-    Sleep, %stime%
-    Send {Space}
-    Sleep, %stime%
+if IsMapleStoryActive() {
+    Loop, 100 {
+        Send {Space}
+        Sleep, %stime%
+        Send {Left}
+        Sleep, %stime%
+        Send {Left}
+        Sleep, %stime%
+        Send {Enter}
+        Sleep, %stime%
+        Send {Space}
+        Sleep, %stime%
+    }
 }
 return

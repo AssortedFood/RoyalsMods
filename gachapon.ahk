@@ -8,3 +8,16 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
+
+stime := 100
+
+Send {Space}
+Sleep, %stime%
+Send {Left}
+Sleep, %stime%
+Send {Left}
+Sleep, %stime%
+Send {Enter}
+Sleep, %stime%
+Send {Space}
+Sleep, %stime%

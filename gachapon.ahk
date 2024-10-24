@@ -23,3 +23,4 @@ Loop, 100 {
     Send {Space}
     Sleep, %stime%
 }
+return

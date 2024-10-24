@@ -6,6 +6,7 @@ SetTitleMatchMode, 2  ; Partial match for window titles
 
 ; Configurable variables (easy to adjust)
 UnitsPerDirection := 10      ; Number of walk+attack units before turning around
+UnitsPerDirection := 8      ; Number of walk+attack units before turning around
 LeftKey := "Left"           ; Key to walk Left
 RightKey := "Right"         ; Key to walk Right
 UnitCounter := 0
@@ -52,8 +53,8 @@ MainLoop() {
                 Send {Shift}
                 Send {Ctrl}
                 Sleep, %mtime%
-                ; Send {Ctrl}
-                ; Sleep, %mtime%
+                Send {Ctrl}
+                Sleep, %mtime%
                 }
 
                 Send {%Direction% up}

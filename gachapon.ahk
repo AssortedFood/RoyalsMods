@@ -14,7 +14,8 @@ reload
 return
 
 F10::
-stime := 500
+stime := 200
+mtime := 500
 if IsMapleStoryActive() {
     Loop, 100 {
         Send {Space}

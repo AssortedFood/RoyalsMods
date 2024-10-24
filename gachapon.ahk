@@ -9,6 +9,11 @@ IsMapleStoryActive() {
     return WinActive("MapleStory")
 }
 
+F9::
+reload
+return
+
+F10::
 stime := 100
 if IsMapleStoryActive() {
     Loop, 100 {

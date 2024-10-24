@@ -1,5 +1,5 @@
 # Define the directory to watch
-$directoryToWatch = "C:\Users\oxi\Projects\RoyalsMods"
+$directoryToWatch = "C:\Users\Hamoon\Projects\RoyalsMods"
 $debounceTime = 3  # Delay in seconds to prevent multiple triggers
 $lastWriteTimes = @{}  # Store the last write time for each file
 
@@ -14,7 +14,7 @@ $action = {
     $filePath = $Event.SourceEventArgs.FullPath
 
     # Ignore changes to the .git directory itself
-    if ($filePath -eq "C:\Users\oxi\Projects\RoyalsMods\.git") {
+    if ($filePath -eq "C:\Users\Hamoon\Projects\RoyalsMods\.git") {
         return
     }
 
@@ -40,7 +40,7 @@ $action = {
         Write-Host "A file in RoyalsMods changed: $filePath. Performing git operations..."
 
         # Change to the Git repository directory
-        Set-Location "C:\Users\oxi\Projects\RoyalsMods"
+        Set-Location "C:\Users\Hamoon\Projects\RoyalsMods"
 
         # Run Git commands
         git add .
